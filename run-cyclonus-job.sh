@@ -26,6 +26,7 @@ kubectl create clusterrolebinding cyclonus --clusterrole=cluster-admin --service
 kubectl create sa cyclonus -n "${JOB_NS}"
 
 JOB_YAML="jobs/${DIR_CNI}/cyclonus-job.yaml CLUSTER_NAME=${CLUSTER_NAME} ./run-cyclonus-job.sh"
+ls
 kubectl create -f "${JOB_YAML}" -n "${JOB_NS}"
 
 # wait for job to start running
