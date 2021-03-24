@@ -19,8 +19,6 @@ jobs:
           path: k8s-local-dev
 
       - run: |
-          mkdir download
-
           pushd ./k8s-local-dev/antrea
             ./setup.sh
           popd

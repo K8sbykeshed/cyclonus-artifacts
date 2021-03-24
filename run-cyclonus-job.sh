@@ -35,4 +35,7 @@ kubectl get all -A
 
 kubectl wait --for=condition=ready pod -l job-name=cyclonus -n "${JOB_NS}" --timeout=5m
 
+mkdir -p downloads
+touch downloads/"${DIR_CNI}".log
+
 kubectl logs -f -n "${JOB_NS}" "${JOB_NAME}" &> downloads/"${DIR_CNI}".log
