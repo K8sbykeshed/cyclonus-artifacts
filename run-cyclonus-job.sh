@@ -33,7 +33,7 @@ kubectl create -f "${JOB_YAML}" -n "${JOB_NS}"
 sleep 30
 kubectl get all -A
 
-kubectl wait --for=condition=ready pod -l job-name=cyclonus -n "${JOB_NS}" --timeout=5m
+kubectl wait --for=condition=complete job/cyclonus -n "${JOB_NS}" --timeout=30s
 
 mkdir -p downloads
 echo "blahblahblah" > downloads/"${DIR_CNI}".log
