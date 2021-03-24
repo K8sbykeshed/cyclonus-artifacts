@@ -4,7 +4,7 @@ set -euo pipefail
 set -xv
 
 JOB_NAME=job.batch/cyclonus
-JOB_NS=netpol-${RANDOM}
+JOB_NS=netpol
 CLUSTER_NAME=$(kind get clusters)
 
 docker pull mfenwick100/cyclonus:latest
@@ -26,9 +26,6 @@ kubectl create ns "${JOB_NS}"
 kubectl create clusterrolebinding cyclonus --clusterrole=cluster-admin --serviceaccount="${JOB_NS}":cyclonus
 
 kubectl create sa cyclonus -n "${JOB_NS}"
-
-JOB_YAML=./jobs/${DIR_CNI}/cyclonus-job.yaml CLUSTER_NAME=${CLUSTER_NAME} ./run-cyclonus-job.sh
-ls
 kubectl create -f "${JOB_YAML}" -n "${JOB_NS}"
 
 # wait for job to start running
@@ -39,8 +36,3 @@ kubectl get all -A
 kubectl wait --for=condition=ready pod -l job-name=cyclonus -n "${JOB_NS}" --timeout=5m
 
 kubectl logs -f -n "${JOB_NS}" "${JOB_NAME}" &> downloads/"${DIR_CNI}".log
-
-kubectl delete ns "${JOB_NS}"
-kubectl delete clusterrolebinding cyclonus --clusterrole=cluster-admin --serviceaccount="${JOB_NS}":cyclonus
-
-kubectl delete sa cyclonus -n "${JOB_NS}"

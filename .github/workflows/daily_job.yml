@@ -26,5 +26,5 @@ jobs:
           popd
 
           pushd ./main          
-            DIR_CNI="antrea" ./run-cyclonus-job.sh
+            JOB_YAML="./jobs/${DIR_CNI}/cyclonus-job.yaml" DIR_CNI="antrea" ./run-cyclonus-job.sh
           popd
