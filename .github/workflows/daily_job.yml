@@ -20,9 +20,11 @@ jobs:
 
       - run: |
           mkdir download
-          ls
+
           pushd ./k8s-local-dev/antrea
             ./setup.sh
           popd
-          ls
-          DIR_CNI="antrea" ./main/run-cyclonus-job.sh
+
+          pushd ./main          
+            DIR_CNI="antrea" ./run-cyclonus-job.sh
+          popd
