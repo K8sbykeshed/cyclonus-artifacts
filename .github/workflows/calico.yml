@@ -1,4 +1,4 @@
-name: "Cilium v1.9.4 job to generate cyclonus artifacts"
+name: "Calico job to generate cyclonus artifacts"
 on:
   workflow_dispatch:
   schedule:
@@ -6,7 +6,7 @@ on:
     - cron: '00 15 * * *'
 
 jobs:
-  cilium-job-v1-9-4-artifacts:
+  calico-job-artifacts:
     runs-on: [ ubuntu-latest ]
     steps:
       - uses: actions/checkout@v2
@@ -20,11 +20,11 @@ jobs:
 
       - run: |
           pushd ./k8s-local-dev
-            CILIUM_VERSION=v1.9.4 ./k8s-local-dev cilium
+            ./k8s-local-dev calico
           popd
 
           pushd ./main          
-            JOB_YAML="./jobs/cilium/cyclonus-job.yaml" DIR_CNI="cilium" ./run-cyclonus-job.sh
+            JOB_YAML="./jobs/calico/cyclonus-job.yaml" DIR_CNI="calico" ./run-cyclonus-job.sh
           popd
 
       - uses: actions/upload-artifact@v2

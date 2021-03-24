@@ -24,7 +24,7 @@ jobs:
           popd
 
           pushd ./main          
-            JOB_YAML="./jobs/antrea/cyclonus-job.yaml" DIR_CNI="cilium" ./run-cyclonus-job.sh
+            JOB_YAML="./jobs/cilium/cyclonus-job.yaml" DIR_CNI="cilium" ./run-cyclonus-job.sh
           popd
 
       - uses: actions/upload-artifact@v2
