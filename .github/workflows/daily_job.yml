@@ -14,8 +14,8 @@ jobs:
           repository: K8sbykeshed/k8s-local-dev
 
       - run: |
-        mkdir download
-        cd ./antrea
-          ./setup.sh
-        cd $HOME
-        DIR_CNI="antrea" ./run-cyclonus-job.sh
+          mkdir download
+          cd ./antrea
+            ./setup.sh
+          cd $HOME
+          DIR_CNI="antrea" ./run-cyclonus-job.sh
