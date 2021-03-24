@@ -1,0 +1,22 @@
+name: "Daily job to generate cyclonus artifacts"
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily, 3:00pm
+    - cron: '00 15 * * *'
+
+jobs:
+  daily-job-artifacts:
+    runs-on: [ ubuntu-latest ]
+    steps:
+    - name: Check out k8s-local-dev
+      uses: actions/checkout@master
+      with:
+        repository: K8sbykeshed/k8s-local-dev
+      run: |
+        mkdir download
+        pushd ./antrea
+          ./setup.sh
+        popd
+        DIR_CNI="antrea" ./run-cyclonus-job.sh
+
