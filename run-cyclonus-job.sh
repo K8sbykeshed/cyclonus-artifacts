@@ -38,4 +38,4 @@ kubectl wait --for=condition=ready pod -l job-name=cyclonus -n "${JOB_NS}" --tim
 mkdir -p downloads
 touch downloads/"${DIR_CNI}".log
 
-kubectl logs -f -n "${JOB_NS}" "${JOB_NAME}" &> downloads/"${DIR_CNI}".log
+kubectl logs -f -n "${JOB_NS}" "${JOB_NAME}" #&> downloads/"${DIR_CNI}".log
