@@ -1,4 +1,4 @@
-name: "Antrea Daily job to generate cyclonus artifacts"
+name: "Antrea v0.13.0 Daily job to generate cyclonus artifacts"
 on:
   workflow_dispatch:
   schedule:
@@ -19,8 +19,8 @@ jobs:
           path: k8s-local-dev
 
       - run: |
-          pushd ./k8s-local-dev/antrea
-            ./setup.sh
+          pushd ./k8s-local-dev
+            ANTREA_VERSION=v0.13.1 ./k8s-local-dev antrea
           popd
 
           pushd ./main          
@@ -31,4 +31,4 @@ jobs:
         with:
           name: logs
           path: ./main/downloads/
-          retention-days: 90
+          retention-days: 60
