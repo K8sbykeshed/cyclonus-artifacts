@@ -1,5 +1,9 @@
 # cyclonus-artifacts
-Daily artifacts from [Cyclonus Project](https://github.com/mattfenwick/cyclonus)
+Daily artifacts from [Cyclonus Project](https://github.com/mattfenwick/cyclonus). To see the logs/output from the cyclonus job, follow these steps:
+
+  1. Select the artifact from the list below.
+  2. Click on the workflow/job
+  3. Go to Artifacts and download logs.zip. It will contain the output from cyclonus job.
 
 [![Antrea v0.12.2 job to generate cyclonus artifacts](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/antrea_v0.12.2_job.yml/badge.svg)](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/antrea_v0.12.2_job.yml)  
 [![Antrea v0.13.1 job to generate cyclonus artifacts](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/antrea_v0.13.1_job.yml/badge.svg)](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/antrea_v0.13.1_job.yml)  
