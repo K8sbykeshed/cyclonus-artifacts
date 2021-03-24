@@ -4,7 +4,7 @@ set -euo pipefail
 set -xv
 
 JOB_NAME=job.batch/cyclonus
-JOB_NS=netpol
+JOB_NS=netpol-${RANDOM}
 CLUSTER_NAME=$(kind get clusters)
 
 docker pull mfenwick100/cyclonus:latest
