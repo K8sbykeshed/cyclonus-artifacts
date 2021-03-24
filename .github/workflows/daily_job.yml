@@ -13,10 +13,12 @@ jobs:
       uses: actions/checkout@master
       with:
         repository: K8sbykeshed/k8s-local-dev
-      run: |
-        mkdir download
-        pushd ./antrea
-          ./setup.sh
-        popd
-        DIR_CNI="antrea" ./run-cyclonus-job.sh
+
+    - name: Run
+       run: |
+         mkdir download
+         pushd ./antrea
+           ./setup.sh
+         popd
+         DIR_CNI="antrea" ./run-cyclonus-job.sh
 
