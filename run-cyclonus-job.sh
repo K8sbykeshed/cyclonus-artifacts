@@ -39,3 +39,8 @@ kubectl get all -A
 kubectl wait --for=condition=ready pod -l job-name=cyclonus -n "${JOB_NS}" --timeout=5m
 
 kubectl logs -f -n "${JOB_NS}" "${JOB_NAME}" &> downloads/"${DIR_CNI}".log
+
+kubectl delete ns "${JOB_NS}"
+kubectl delete clusterrolebinding cyclonus --clusterrole=cluster-admin --serviceaccount="${JOB_NS}":cyclonus
+
+kubectl delete sa cyclonus -n "${JOB_NS}"
