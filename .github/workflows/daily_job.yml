@@ -16,7 +16,9 @@ jobs:
 
       - run: |
           mkdir download
+          ls
           pushd ./antrea
             ./setup.sh
           popd
+          ls
           DIR_CNI="antrea" ./run-cyclonus-job.sh
