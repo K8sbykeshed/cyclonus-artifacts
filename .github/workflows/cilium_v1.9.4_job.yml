@@ -1,4 +1,4 @@
-name: "Cilium v1.9.4 Daily job to generate cyclonus artifacts"
+name: "Cilium v1.9.4 job to generate cyclonus artifacts"
 on:
   workflow_dispatch:
   schedule:
@@ -6,7 +6,7 @@ on:
     - cron: '00 15 * * *'
 
 jobs:
-  cilium-daily-job-v1-9-4-artifacts:
+  cilium-job-v1-9-4-artifacts:
     runs-on: [ ubuntu-latest ]
     steps:
       - uses: actions/checkout@v2
