@@ -10,15 +10,19 @@ jobs:
     runs-on: [ ubuntu-latest ]
     steps:
       - uses: actions/checkout@v2
+        with:
+           path: main
+
       - uses: actions/checkout@master
         with:
           repository: K8sbykeshed/k8s-local-dev
+          path: k8s-local-dev
 
       - run: |
           mkdir download
           ls
-          pushd ./antrea
+          pushd ./k8s-local-dev/antrea
             ./setup.sh
           popd
           ls
-          DIR_CNI="antrea" ./run-cyclonus-job.sh
+          DIR_CNI="antrea" ./main/run-cyclonus-job.sh
