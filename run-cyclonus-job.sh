@@ -36,10 +36,9 @@ kubectl get all -A
 kubectl wait --for=condition=ready pod -l job-name=cyclonus -n "${JOB_NS}" --timeout=5m
 
 mkdir -p downloads
-touch downloads/"${DIR_CNI}".log
+echo "blahblahblah" > downloads/"${DIR_CNI}".log
 
 #fix-me avoid sleep keep pooling pod or the job send a signal that is done.
-sleep 1h
+#sleep 2h
 
-ls -R
 kubectl logs -n "${JOB_NS}" "${JOB_NAME}" #&> downloads/"${DIR_CNI}".log
