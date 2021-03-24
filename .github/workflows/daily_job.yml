@@ -1,4 +1,4 @@
-name: "Daily job to generate cyclonus artifacts"
+name: "Antrea Daily job to generate cyclonus artifacts"
 on:
   workflow_dispatch:
   schedule:
@@ -6,7 +6,7 @@ on:
     - cron: '00 15 * * *'
 
 jobs:
-  daily-job-artifacts:
+  antrea-daily-job-artifacts:
     runs-on: [ ubuntu-latest ]
     steps:
       - uses: actions/checkout@v2
