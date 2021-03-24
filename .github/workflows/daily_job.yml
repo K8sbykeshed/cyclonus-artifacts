@@ -26,3 +26,9 @@ jobs:
           pushd ./main          
             JOB_YAML="./jobs/antrea/cyclonus-job.yaml" DIR_CNI="antrea" ./run-cyclonus-job.sh
           popd
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: logs
+          path: ./downloads/antrea.log
+          retention-days: 5
