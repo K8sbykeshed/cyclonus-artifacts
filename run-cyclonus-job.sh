@@ -33,12 +33,9 @@ kubectl create -f "${JOB_YAML}" -n "${JOB_NS}"
 sleep 30
 kubectl get all -A
 
-kubectl wait --for=condition=complete job/cyclonus -n "${JOB_NS}" --timeout=30s
+#kubectl wait --for=condition=complete job/cyclonus -n "${JOB_NS}" --timeout=30s
 
 mkdir -p downloads
-echo "blahblahblah" > downloads/"${DIR_CNI}".log
+echo "blahblahblah" > downloads/"${DIR_CNI}-$(date +"%m-%d-%Y-%k_%M_%S")".log
 
-#fix-me avoid sleep keep pooling pod or the job send a signal that is done.
-#sleep 2h
-
-kubectl logs -n "${JOB_NS}" "${JOB_NAME}" #&> downloads/"${DIR_CNI}".log
+kubectl logs -n "${JOB_NS}" "${JOB_NAME}" &> downloads/"${DIR_CNI}-$(date +%m-%d-%Y-%k_%M_%S)".log
