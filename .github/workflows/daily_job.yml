@@ -31,4 +31,4 @@ jobs:
         with:
           name: logs
           path: ./main/downloads/
-          retention-days: 5
+          retention-days: 90
