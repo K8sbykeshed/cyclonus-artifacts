@@ -25,7 +25,7 @@ kubectl create ns "${JOB_NS}"
 kubectl create clusterrolebinding cyclonus --clusterrole=cluster-admin --serviceaccount="${JOB_NS}":cyclonus
 kubectl create sa cyclonus -n "${JOB_NS}"
 
-JOB_YAML="jobs/${DIR_CNI}/cyclonus-job.yaml CLUSTER_NAME=${CLUSTER_NAME} ./run-cyclonus-job.sh"
+JOB_YAML=./jobs/${DIR_CNI}/cyclonus-job.yaml CLUSTER_NAME=${CLUSTER_NAME} ./run-cyclonus-job.sh
 ls
 kubectl create -f "${JOB_YAML}" -n "${JOB_NS}"
 
