@@ -21,13 +21,7 @@ kubectl get nodes
 kubectl get pods -A
 
 # set up cyclonus
-kubectl get ns ${JOB_NS}
-
-if kubect get ns "${JOB_NS}" ; then
-    echo "skipping create ns..."
-else
-    kubectl create ns "${JOB_NS}"
-fi
+kubectl create ns "${JOB_NS}"
 
 kubectl create clusterrolebinding cyclonus --clusterrole=cluster-admin --serviceaccount="${JOB_NS}":cyclonus
 
