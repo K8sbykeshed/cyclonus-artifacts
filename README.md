@@ -8,7 +8,6 @@ Antrea and Calico have the best NetworkPolicy conformance of any CNI's we've tes
 Anecdotally, here's what we've found when exploring the policies of different providers so far... PR's welcome from CNI providers to add nuance to this list:
 
 - calico supports everything, has a couple minor bugs here and there which we've patched
-- antrea doesn’t support SCTP
 - antrea: policy changes require about 15 seconds to take effect, we're working w/ the antrea community to speed this up.
 - cilium doesn’t support SCTP
 - cilium doesn’t support IPBlocks (https://github.com/cilium/cilium/issues/14497)
