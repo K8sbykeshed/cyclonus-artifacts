@@ -5,12 +5,15 @@ Given that the state of CNI is always moving forward, we want to make sure to cl
 ## Results
 Antrea and Calico have the best NetworkPolicy conformance of any CNI's we've tested.  Cillium is catching up rapidly, and is working graciously with us to resolve discrepencies.  There are a couple of minor egress cases missed by calico around egress.
 
-Anecdotally, here's what we've found when exploring the policies of different providers so far... PR's welcome from CNI providers to add nuance to this list:
+**Anecdotally**, here's what we've found when **exploring** the policies of different providers so far... PR's welcome from CNI providers to add nuance to this list.  This is **obviously** not meant to be an official statement of any kind.
 
 - calico supports everything, has a couple minor bugs here and there which we've patched
-- antrea: policy changes require about 15 seconds to take effect, we're working w/ the antrea community to speed this up.
+- antrea: policy changes (in worse case scenarios) can take a few seconds to take effect, we're working w/ the antrea community to speed this up.
 - cilium doesn’t support SCTP
 - cilium doesn’t support IPBlocks (https://github.com/cilium/cilium/issues/14497)
+
+Plenty of subtlety around what it means to support an IPBlock, the purpose of this repo is not to indemnify any CNI provider, but just to make some initial notes as we move towards a more official definition of what network policy conformance is.
+
 - cilium has a couple bugs around parsing network policy ports/protocols
 - ovn doesn’t support named ports
 - harepin calls (from a pod back to itself) are supported differently from CNI to CNI as these are not strictly defined in the netpol spec
