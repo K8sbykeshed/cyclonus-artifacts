@@ -32,11 +32,3 @@ Daily artifacts from [Cyclonus Project](https://github.com/mattfenwick/cyclonus)
   1. Select the artifact from the list below.
   2. Click on the workflow/job
   3. Go to Artifacts and download **logs.zip**. It will contain the output logs from cyclonus job.
-
-[![Antrea v1.0.0 job to generate cyclonus artifacts](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/antrea_v1.0.0_job.yml/badge.svg)](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/antrea_v1.0.0_job.yml)
-
-[![Calico job to generate cyclonus artifacts](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/calico.yml/badge.svg)](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/calico.yml)  
-
-[![Cilium v1.9.6 job to generate cyclonus artifacts](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/cilium_v1.9.6_job.yml/badge.svg)](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/cilium_v1.9.6_job.yml)
-
-[![ovn-kubernetes job to generate cyclonus artifacts](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/ovn-kubernetes.yml/badge.svg)](https://github.com/K8sbykeshed/cyclonus-artifacts/actions/workflows/ovn-kubernetes.yml)  
